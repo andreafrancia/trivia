@@ -1,0 +1,5 @@
+/*/bin/
+/*/obj/
+/packages/
+/Trivia.Tests/actual.txt
+/Trivia.Tests/reference.txt

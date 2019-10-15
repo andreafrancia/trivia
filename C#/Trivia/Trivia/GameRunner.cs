@@ -11,8 +11,19 @@ namespace Trivia
     {
 
         private static bool notAWinner;
+        private readonly Random Rand;
+
+        public GameRunner(Random random)
+        {
+            Rand = random;
+        }
 
         public static void Main(String[] args)
+        {
+            var runner = new GameRunner(new Random());
+            runner.DoMain(args);
+        }
+        public void DoMain(String[] args)
         {
             Game aGame = new Game();
 
@@ -20,14 +31,12 @@ namespace Trivia
             aGame.add("Pat");
             aGame.add("Sue");
 
-            Random rand = new Random();
-
             do
             {
 
-                aGame.roll(rand.Next(5) + 1);
+                aGame.roll(Rand.Next(5) + 1);
 
-                if (rand.Next(9) == 7)
+                if (Rand.Next(9) == 7)
                 {
                     notAWinner = aGame.wrongAnswer();
                 }
