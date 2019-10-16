@@ -50,10 +50,7 @@ namespace UglyTrivia
             return true;
         }
 
-        int HowManyPlayers()
-        {
-            return players.Count;
-        }
+        int HowManyPlayers() => players.Count;
 
         public void Roll(int roll)
         {
