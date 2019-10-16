@@ -7,7 +7,9 @@ namespace Trivia.Tests
     [TestFixture]
     public class Tests
     {
-        private static readonly string ProjectDir = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory));
+        private static readonly string ProjectDir =
+            Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory));
+
         private static readonly string PathToReference = Path.Combine(ProjectDir, "reference.txt");
         private static readonly string PathToActual = Path.Combine(ProjectDir, "actual.txt");
 
@@ -15,6 +17,12 @@ namespace Trivia.Tests
         public void TestBasile()
         {
             Assert.That(1, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void TestMS()
+        {
+            Assert.IsTrue(true);
         }
         
         [SetUp]
@@ -26,6 +34,7 @@ namespace Trivia.Tests
                 Assert.Fail("Please re-run tests. Reference created: " + PathToReference);
             }
         }
+
         [Test]
         public void Test1()
         {
@@ -47,6 +56,7 @@ namespace Trivia.Tests
                     var runner = new GameRunner(new Random(i));
                     runner.DoMain(new string[] { });
                 }
+
                 File.WriteAllText(capturePath, sw.ToString());
             }
 
