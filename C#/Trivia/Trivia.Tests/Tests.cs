@@ -11,6 +11,7 @@ namespace Trivia.Tests
         private static readonly string PathToReference = Path.Combine(ProjectDir, "reference.txt");
         private static readonly string PathToActual = Path.Combine(ProjectDir, "actual.txt");
 
+
         [SetUp]
         public void CreateReferenceFirstTime()
         {
