@@ -33,7 +33,7 @@ namespace UglyTrivia
             }
         }
 
-        public String CreateRockQuestion(int index)
+        private String CreateRockQuestion(int index)
         {
             return "Rock Question " + index;
         }
