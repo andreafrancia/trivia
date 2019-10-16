@@ -27,13 +27,13 @@ namespace Trivia
         {
             Game aGame = new Game();
 
-            aGame.add("Chet");
-            aGame.add("Pat");
-            aGame.add("Sue");
+            aGame.Add("Chet");
+            aGame.Add("Pat");
+            aGame.Add("Sue");
 
             do
             {
-                aGame.roll(Rand.Next(5) + 1);
+                aGame.Roll(Rand.Next(5) + 1);
 
                 if (Rand.Next(9) == 7)
                 {
