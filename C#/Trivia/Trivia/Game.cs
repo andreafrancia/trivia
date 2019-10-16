@@ -29,13 +29,13 @@ namespace UglyTrivia
                 popQuestions.AddLast("Pop Question " + i);
                 scienceQuestions.AddLast(("Science Question " + i));
                 sportsQuestions.AddLast(("Sports Question " + i));
-                rockQuestions.AddLast(CreateRockQuestion(i));
+                rockQuestions.AddLast(CreateRockQuestion(i, "Rock"));
             }
         }
 
-        private String CreateRockQuestion(int index)
+        private String CreateRockQuestion(int index, string theme)
         {
-            return "Rock" + " Question " + index;
+            return theme + " Question " + index;
         }
 
         public bool Add(String playerName)
