@@ -45,7 +45,7 @@ namespace UglyTrivia
             purses[HowManyPlayers()] = 0;
             inPenaltyBox[HowManyPlayers()] = false;
 
-            Console.WriteLine(playerName + " was added");
+            Console.WriteLine($"{playerName} was added");
             Console.WriteLine("They are player number " + players.Count);
             return true;
         }
@@ -57,7 +57,7 @@ namespace UglyTrivia
 
         public void Roll(int roll)
         {
-            Console.WriteLine(players[currentPlayer] + " is the current player");
+            Console.WriteLine($"{players[currentPlayer]} is the current player");
             Console.WriteLine("They have rolled a " + roll);
 
             if (inPenaltyBox[currentPlayer])
@@ -66,7 +66,7 @@ namespace UglyTrivia
                 {
                     isGettingOutOfPenaltyBox = true;
 
-                    Console.WriteLine(players[currentPlayer] + " is getting out of the penalty box");
+                    Console.WriteLine($"{players[currentPlayer]} is getting out of the penalty box");
                     places[currentPlayer] = places[currentPlayer] + roll;
                     if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 
@@ -78,7 +78,7 @@ namespace UglyTrivia
                 }
                 else
                 {
-                    Console.WriteLine(players[currentPlayer] + " is not getting out of the penalty box");
+                    Console.WriteLine($"{players[currentPlayer]} is not getting out of the penalty box");
                     isGettingOutOfPenaltyBox = false;
                 }
 
