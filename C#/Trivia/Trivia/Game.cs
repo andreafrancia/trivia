@@ -19,7 +19,7 @@ namespace UglyTrivia
         LinkedList<string> sportsQuestions = new LinkedList<string>();
         LinkedList<string> rockQuestions = new LinkedList<string>();
 
-        int currentPlayer = 0;
+        int currentPlayer;
         bool isGettingOutOfPenaltyBox;
 
         public Game()
@@ -38,7 +38,7 @@ namespace UglyTrivia
             return theme + " Question " + index;
         }
 
-        public bool Add(String playerName)
+        public bool Add(string playerName)
         {
             players.Add(playerName);
             places[HowManyPlayers()] = 0;
@@ -148,7 +148,7 @@ namespace UglyTrivia
                             + purses[currentPlayer]
                             + " Gold Coins.");
 
-                    bool winner = DidPlayerWin();
+                    var winner = DidPlayerWin();
                     currentPlayer++;
                     if (currentPlayer == players.Count) currentPlayer = 0;
 
@@ -169,7 +169,7 @@ namespace UglyTrivia
                                   + purses[currentPlayer]
                                   + " Gold Coins.");
 
-                bool winner = DidPlayerWin();
+                var winner = DidPlayerWin();
                 currentPlayer++;
                 if (currentPlayer == players.Count) currentPlayer = 0;
 
