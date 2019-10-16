@@ -33,7 +33,6 @@ namespace Trivia
 
             do
             {
-
                 aGame.roll(Rand.Next(5) + 1);
 
                 if (Rand.Next(9) == 7)
@@ -44,14 +43,8 @@ namespace Trivia
                 {
                     notAWinner = aGame.wasCorrectlyAnswered();
                 }
-
-
-
             } while (notAWinner);
-
         }
-
-
     }
 
 }
