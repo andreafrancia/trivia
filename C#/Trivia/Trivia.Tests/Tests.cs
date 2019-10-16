@@ -7,11 +7,11 @@ namespace Trivia.Tests
     [TestFixture]
     public class Tests
     {
-        private static readonly string ProjectDir =
+        static readonly string ProjectDir =
             Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory));
 
-        private static readonly string PathToReference = Path.Combine(ProjectDir, "reference.txt");
-        private static readonly string PathToActual = Path.Combine(ProjectDir, "actual.txt");
+        static readonly string PathToReference = Path.Combine(ProjectDir, "reference.txt");
+        static readonly string PathToActual = Path.Combine(ProjectDir, "actual.txt");
 
         [SetUp]
         public void CreateReferenceFirstTime()
