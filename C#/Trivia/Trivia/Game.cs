@@ -28,7 +28,7 @@ namespace UglyTrivia
             {
                 popQuestions.AddLast("Pop Question " + i);
                 scienceQuestions.AddLast(("Science Question " + i));
-                sportsQuestions.AddLast(("Sports Question " + i));
+                sportsQuestions.AddLast(CreateQuestion(i, "Sports"));
                 rockQuestions.AddLast(CreateQuestion(i, "Rock"));
             }
         }
