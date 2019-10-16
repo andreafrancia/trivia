@@ -38,11 +38,6 @@ namespace UglyTrivia
             return "Rock Question " + index;
         }
 
-        public bool IsPlayable()
-        {
-            return (HowManyPlayers() >= 2);
-        }
-
         public bool Add(String playerName)
         {
             players.Add(playerName);
