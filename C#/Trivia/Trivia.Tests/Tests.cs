@@ -18,7 +18,7 @@ namespace Trivia.Tests
         {
             if (!File.Exists(PathToReference))
             {
-                runAndCaptureOutputTo(PathToReference);
+                RunAndCaptureOutputTo(PathToReference);
                 Assert.Fail("Please re-run tests. Reference created: " + PathToReference);
             }
         }
@@ -26,14 +26,14 @@ namespace Trivia.Tests
         [Test]
         public void Test1()
         {
-            runAndCaptureOutputTo(PathToActual);
+            RunAndCaptureOutputTo(PathToActual);
 
             string actual = File.ReadAllText(PathToActual);
             string reference = File.ReadAllText(PathToReference);
             Assert.AreEqual(reference, actual);
         }
 
-        private static void runAndCaptureOutputTo(string capturePath)
+        private static void RunAndCaptureOutputTo(string capturePath)
         {
             var oldOut = Console.Out;
             using (StringWriter sw = new StringWriter())
