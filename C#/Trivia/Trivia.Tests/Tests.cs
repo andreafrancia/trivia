@@ -13,18 +13,6 @@ namespace Trivia.Tests
         static readonly string PathToReference = Path.Combine(ProjectDir, "reference.txt");
         static readonly string PathToActual = Path.Combine(ProjectDir, "actual.txt");
 
-        [Test]
-        public void TestBasile()
-        {
-            Assert.That(1, Is.EqualTo(1));
-        }
-
-        [Test]
-        public void TestMS()
-        {
-            Assert.IsTrue(true);
-        }
-
         [SetUp]
         public void CreateReferenceFirstTime()
         {
