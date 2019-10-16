@@ -19,12 +19,12 @@ namespace UglyTrivia
         LinkedList<string> sportsQuestions = new LinkedList<string>();
         LinkedList<string> rockQuestions = new LinkedList<string>();
 
-        int currentPlayer = 0;
+        int currentPlayer;
         bool isGettingOutOfPenaltyBox;
 
         public Game()
         {
-            for (int i = 0; i < 50; i++)
+            for (var i = 0; i < 50; i++)
             {
                 popQuestions.AddLast("Pop Question " + i);
                 scienceQuestions.AddLast(("Science Question " + i));
@@ -33,12 +33,12 @@ namespace UglyTrivia
             }
         }
 
-        String CreateQuestion(int index, string theme)
+        string CreateQuestion(int index, string theme)
         {
             return theme + " Question " + index;
         }
 
-        public bool Add(String playerName)
+        public bool Add(string playerName)
         {
             players.Add(playerName);
             places[HowManyPlayers()] = 0;
