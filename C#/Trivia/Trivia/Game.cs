@@ -50,7 +50,10 @@ namespace UglyTrivia
             return true;
         }
 
-        int HowManyPlayers() => players.Count;
+        int HowManyPlayers()
+        {
+            return players.Count;
+        }
 
         public void Roll(int roll)
         {
@@ -99,27 +102,29 @@ namespace UglyTrivia
         {
             if (currentCategory == "Pop")
             {
-                Console.WriteLine(popQuestions.First());
-                popQuestions.RemoveFirst();
+                AskQuestionAndRemove(popQuestions);
             }
             if (currentCategory == "Science")
             {
-                Console.WriteLine(scienceQuestions.First());
-                scienceQuestions.RemoveFirst();
+                AskQuestionAndRemove(scienceQuestions);
             }
             if (currentCategory == "Sports")
             {
-                Console.WriteLine(sportsQuestions.First());
-                sportsQuestions.RemoveFirst();
+                AskQuestionAndRemove(sportsQuestions);
             }
             if (currentCategory == "Rock")
             {
-                Console.WriteLine(rockQuestions.First());
-                rockQuestions.RemoveFirst();
+                AskQuestionAndRemove(rockQuestions);
             }
         }
 
-        String CurrentCategory()
+        void AskQuestionAndRemove(LinkedList<string> questionsList)
+        {
+            Console.WriteLine(questionsList.First());
+            questionsList.RemoveFirst();
+        }
+
+        string CurrentCategory()
         {
             if (places[currentPlayer] == 0) return "Pop";
             if (places[currentPlayer] == 4) return "Pop";
@@ -152,22 +157,20 @@ namespace UglyTrivia
 
                     return winner;
                 }
-                else
-                {
-                    currentPlayer++;
-                    if (currentPlayer == players.Count) currentPlayer = 0;
-                    return true;
-                }
+
+                currentPlayer++;
+                if (currentPlayer == players.Count) currentPlayer = 0;
+                return true;
             }
-            else
+
             {
 
                 Console.WriteLine("Answer was corrent!!!!");
                 purses[currentPlayer]++;
                 Console.WriteLine(players[currentPlayer]
-                        + " now has "
-                        + purses[currentPlayer]
-                        + " Gold Coins.");
+                                  + " now has "
+                                  + purses[currentPlayer]
+                                  + " Gold Coins.");
 
                 bool winner = DidPlayerWin();
                 currentPlayer++;
@@ -190,7 +193,7 @@ namespace UglyTrivia
 
         bool DidPlayerWin()
         {
-            return !(purses[currentPlayer] == 6);
+            return purses[currentPlayer] != 6;
         }
     }
 
