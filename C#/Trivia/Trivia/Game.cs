@@ -46,7 +46,7 @@ namespace UglyTrivia
             inPenaltyBox[HowManyPlayers()] = false;
 
             Console.WriteLine(playerName + " was added");
-            Console.WriteLine("They are player number " + players.Count);
+            Console.WriteLine("They are player number " + HowManyPlayers());
             return true;
         }
 
@@ -141,7 +141,7 @@ namespace UglyTrivia
         public bool WasCorrectlyAnswered()
         {
             bool winner;
-            
+
             if (inPenaltyBox[currentPlayer])
             {
                 if (isGettingOutOfPenaltyBox)
