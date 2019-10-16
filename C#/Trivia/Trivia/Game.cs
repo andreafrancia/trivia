@@ -33,12 +33,12 @@ namespace UglyTrivia
             }
         }
 
-        public String createRockQuestion(int index)
+        public String CreateRockQuestion(int index)
         {
             return "Rock Question " + index;
         }
 
-        public bool isPlayable()
+        public bool IsPlayable()
         {
             return (howManyPlayers() >= 2);
         }
@@ -167,9 +167,6 @@ namespace UglyTrivia
                     if (currentPlayer == players.Count) currentPlayer = 0;
                     return true;
                 }
-
-
-
             }
             else
             {
