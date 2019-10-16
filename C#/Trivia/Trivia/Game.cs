@@ -33,7 +33,7 @@ namespace UglyTrivia
             }
         }
 
-        public String CreateRockQuestion(int index)
+        private String CreateRockQuestion(int index)
         {
             return "Rock Question " + index;
         }
@@ -50,10 +50,7 @@ namespace UglyTrivia
             return true;
         }
 
-        public int HowManyPlayers()
-        {
-            return players.Count;
-        }
+        private int HowManyPlayers() => players.Count;
 
         public void Roll(int roll)
         {
@@ -102,26 +99,27 @@ namespace UglyTrivia
         {
             if (currentCategory == "Pop")
             {
-                Console.WriteLine(popQuestions.First());
-                popQuestions.RemoveFirst();
+                AskQuestionAndRemove(popQuestions);
             }
             if (currentCategory == "Science")
             {
-                Console.WriteLine(scienceQuestions.First());
-                scienceQuestions.RemoveFirst();
+                AskQuestionAndRemove(scienceQuestions);
             }
             if (currentCategory == "Sports")
             {
-                Console.WriteLine(sportsQuestions.First());
-                sportsQuestions.RemoveFirst();
+                AskQuestionAndRemove(sportsQuestions);
             }
             if (currentCategory == "Rock")
             {
-                Console.WriteLine(rockQuestions.First());
-                rockQuestions.RemoveFirst();
+                AskQuestionAndRemove(rockQuestions);
             }
         }
 
+        private void AskQuestionAndRemove(LinkedList<string> questionsList)
+        {
+            Console.WriteLine(questionsList.First());
+            questionsList.RemoveFirst();
+        }
 
         private string CurrentCategory()
         {
