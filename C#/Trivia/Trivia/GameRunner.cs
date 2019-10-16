@@ -23,6 +23,7 @@ namespace Trivia
             var runner = new GameRunner(new Random());
             runner.DoMain(args);
         }
+
         public void DoMain(String[] args)
         {
             Game aGame = new Game();
