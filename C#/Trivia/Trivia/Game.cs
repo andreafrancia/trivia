@@ -70,7 +70,7 @@ namespace UglyTrivia
             }
         }
 
-        private static bool IsEven(int roll)
+        private bool IsEven(int roll)
         {
             return roll % 2 != 0;
         }
@@ -111,7 +111,7 @@ namespace UglyTrivia
                 return true;
             }
 
-            Console.WriteLine("Answer was corrent!!!!");
+            Console.WriteLine("Answer was correct!!!!");
             _purses[_currentPlayer]++;
             Console.WriteLine($"{players[_currentPlayer]} now has {_purses[_currentPlayer]} Gold Coins.");
 
