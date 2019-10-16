@@ -37,7 +37,7 @@ namespace UglyTrivia
 
             if (_inPenaltyBox[_currentPlayer])
             {
-                if (roll % 2 != 0)
+                if (IsEven(roll))
                 {
                     _isGettingOutOfPenaltyBox = true;
 
@@ -68,6 +68,11 @@ namespace UglyTrivia
                 Console.WriteLine("The category is " + CurrentCategory());
                 _questions.AskQuestion(CurrentCategory());
             }
+        }
+
+        private static bool IsEven(int roll)
+        {
+            return roll % 2 != 0;
         }
 
         string CurrentCategory()
