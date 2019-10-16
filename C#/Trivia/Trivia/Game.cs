@@ -35,7 +35,7 @@ namespace UglyTrivia
             }
         }
 
-        public String createRockQuestion(int index)
+        String createRockQuestion(int index)
         {
             return "Rock Question " + index;
         }
@@ -59,7 +59,7 @@ namespace UglyTrivia
             return true;
         }
 
-        public int howManyPlayers()
+        int howManyPlayers()
         {
             return players.Count;
         }
@@ -107,7 +107,7 @@ namespace UglyTrivia
 
         }
 
-        private void askQuestion()
+        void askQuestion()
         {
             if (currentCategory() == "Pop")
             {
@@ -132,7 +132,7 @@ namespace UglyTrivia
         }
 
 
-        private String currentCategory()
+        String currentCategory()
         {
             if (places[currentPlayer] == 0) return "Pop";
             if (places[currentPlayer] == 4) return "Pop";
@@ -205,7 +205,7 @@ namespace UglyTrivia
         }
 
 
-        private bool didPlayerWin()
+        bool didPlayerWin()
         {
             return !(purses[currentPlayer] == 6);
         }

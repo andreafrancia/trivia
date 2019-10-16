@@ -9,9 +9,8 @@ namespace Trivia
 {
     public class GameRunner
     {
-
-        private static bool notAWinner;
-        private readonly Random Rand;
+        static bool notAWinner;
+        readonly Random Rand;
 
         public GameRunner(Random random)
         {
