@@ -148,10 +148,7 @@ namespace UglyTrivia
                 {
                     Console.WriteLine("Answer was correct!!!!");
                     purses[currentPlayer]++;
-                    Console.WriteLine(players[currentPlayer]
-                            + " now has "
-                            + purses[currentPlayer]
-                            + " Gold Coins.");
+                    Console.WriteLine($"{players[currentPlayer]} now has {purses[currentPlayer]} Gold Coins.");
 
                     winner = DidPlayerWin();
                     currentPlayer++;
@@ -167,10 +164,7 @@ namespace UglyTrivia
 
             Console.WriteLine("Answer was corrent!!!!");
             purses[currentPlayer]++;
-            Console.WriteLine(players[currentPlayer]
-                              + " now has "
-                              + purses[currentPlayer]
-                              + " Gold Coins.");
+            Console.WriteLine($"{players[currentPlayer]} now has {purses[currentPlayer]} Gold Coins.");
 
             winner = DidPlayerWin();
             currentPlayer++;
