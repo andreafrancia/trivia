@@ -94,13 +94,13 @@ namespace UglyTrivia
 
                     winner = DidPlayerWin();
                     currentPlayer++;
-                    if (currentPlayer == players.Count) currentPlayer = 0;
+                    if (currentPlayer == HowManyPlayers()) currentPlayer = 0;
 
                     return winner;
                 }
 
                 currentPlayer++;
-                if (currentPlayer == players.Count) currentPlayer = 0;
+                if (currentPlayer == HowManyPlayers()) currentPlayer = 0;
                 return true;
             }
 
@@ -110,7 +110,7 @@ namespace UglyTrivia
 
             winner = DidPlayerWin();
             currentPlayer++;
-            if (currentPlayer == players.Count) currentPlayer = 0;
+            if (currentPlayer == HowManyPlayers()) currentPlayer = 0;
 
             return winner;
         }
@@ -122,7 +122,7 @@ namespace UglyTrivia
             inPenaltyBox[currentPlayer] = true;
 
             currentPlayer++;
-            if (currentPlayer == players.Count) currentPlayer = 0;
+            if (currentPlayer == HowManyPlayers()) currentPlayer = 0;
             return true;
         }
 
