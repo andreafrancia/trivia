@@ -35,7 +35,7 @@ namespace UglyTrivia
 
         private String CreateRockQuestion(int index)
         {
-            return "Rock Question " + index;
+            return "Rock" + " Question " + index;
         }
 
         public bool Add(String playerName)
