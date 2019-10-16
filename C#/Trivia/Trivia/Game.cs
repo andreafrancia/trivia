@@ -123,7 +123,7 @@ namespace UglyTrivia
         }
 
 
-        private String CurrentCategory()
+        private string CurrentCategory()
         {
             if (places[currentPlayer] == 0) return "Pop";
             if (places[currentPlayer] == 4) return "Pop";
@@ -156,22 +156,20 @@ namespace UglyTrivia
 
                     return winner;
                 }
-                else
-                {
-                    currentPlayer++;
-                    if (currentPlayer == players.Count) currentPlayer = 0;
-                    return true;
-                }
+
+                currentPlayer++;
+                if (currentPlayer == players.Count) currentPlayer = 0;
+                return true;
             }
-            else
+
             {
 
                 Console.WriteLine("Answer was corrent!!!!");
                 purses[currentPlayer]++;
                 Console.WriteLine(players[currentPlayer]
-                        + " now has "
-                        + purses[currentPlayer]
-                        + " Gold Coins.");
+                                  + " now has "
+                                  + purses[currentPlayer]
+                                  + " Gold Coins.");
 
                 bool winner = DidPlayerWin();
                 currentPlayer++;
@@ -195,7 +193,7 @@ namespace UglyTrivia
 
         private bool DidPlayerWin()
         {
-            return !(purses[currentPlayer] == 6);
+            return purses[currentPlayer] != 6;
         }
     }
 
