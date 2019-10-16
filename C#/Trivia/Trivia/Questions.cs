@@ -6,23 +6,24 @@ namespace UglyTrivia
 {
     public class Questions
     {
-
-        LinkedList<string> popQuestions = new LinkedList<string>();
-        LinkedList<string> scienceQuestions = new LinkedList<string>();
-        LinkedList<string> sportsQuestions = new LinkedList<string>();
-        LinkedList<string> rockQuestions = new LinkedList<string>();
+        Dictionary<string, LinkedList<string>> _questions;
 
         public Questions()
         {
+            _questions = new Dictionary<string, LinkedList<string>>();
+            _questions.Add("Pop", new LinkedList<string>());
+            _questions.Add("Science", new LinkedList<string>());
+            _questions.Add("Sports", new LinkedList<string>());
+            _questions.Add("Rock", new LinkedList<string>());
+
             for (var i = 0; i < 50; i++)
             {
-                popQuestions.AddLast(CreateQuestion(i, "Pop"));
-                scienceQuestions.AddLast(CreateQuestion(i, "Science"));
-                sportsQuestions.AddLast(CreateQuestion(i, "Sports"));
-                rockQuestions.AddLast(CreateQuestion(i, "Rock"));
+                _questions["Pop"].AddLast(CreateQuestion(i, "Pop"));
+                _questions["Science"].AddLast(CreateQuestion(i, "Science"));
+                _questions["Sports"].AddLast(CreateQuestion(i, "Sports"));
+                _questions["Rock"].AddLast(CreateQuestion(i, "Rock"));
             }
         }
-
 
         string CreateQuestion(int index, string theme)
         {
@@ -31,28 +32,8 @@ namespace UglyTrivia
 
         public void AskQuestion(string currentCategory)
         {
-            if (currentCategory == "Pop")
-            {
-                AskQuestionAndRemove(popQuestions);
-            }
-            if (currentCategory == "Science")
-            {
-                AskQuestionAndRemove(scienceQuestions);
-            }
-            if (currentCategory == "Sports")
-            {
-                AskQuestionAndRemove(sportsQuestions);
-            }
-            if (currentCategory == "Rock")
-            {
-                AskQuestionAndRemove(rockQuestions);
-            }
-        }
-
-        void AskQuestionAndRemove(LinkedList<string> questionsList)
-        {
-            Console.WriteLine(questionsList.First());
-            questionsList.RemoveFirst();
+            Console.WriteLine(_questions[currentCategory].First());
+            _questions[currentCategory].RemoveFirst();
         }
     }
 }
