@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace UglyTrivia
 {
@@ -27,7 +26,7 @@ namespace UglyTrivia
             for (var i = 0; i < 50; i++)
             {
                 popQuestions.AddLast("Pop Question " + i);
-                scienceQuestions.AddLast(("Science Question " + i));
+                scienceQuestions.AddLast("Science Question " + i);
                 sportsQuestions.AddLast(CreateQuestion(i, "Sports"));
                 rockQuestions.AddLast(CreateQuestion(i, "Rock"));
             }
