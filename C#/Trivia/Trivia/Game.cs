@@ -33,10 +33,7 @@ namespace UglyTrivia
             }
         }
 
-        string CreateQuestion(int index, string theme)
-        {
-            return theme + " Question " + index;
-        }
+        string CreateQuestion(int index, string theme) => $"{theme} Question {index}";
 
         public bool Add(string playerName)
         {
@@ -50,10 +47,7 @@ namespace UglyTrivia
             return true;
         }
 
-        int HowManyPlayers()
-        {
-            return players.Count;
-        }
+        int HowManyPlayers() => players.Count;
 
         public void Roll(int roll)
         {
