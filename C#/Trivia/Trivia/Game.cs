@@ -79,7 +79,7 @@ namespace UglyTrivia
                             + "'s new location is "
                             + places[currentPlayer]);
                     Console.WriteLine("The category is " + CurrentCategory());
-                    AskQuestion();
+                    AskQuestion(CurrentCategory());
                 }
                 else
                 {
@@ -98,29 +98,29 @@ namespace UglyTrivia
                         + "'s new location is "
                         + places[currentPlayer]);
                 Console.WriteLine("The category is " + CurrentCategory());
-                AskQuestion();
+                AskQuestion(CurrentCategory());
             }
 
         }
 
-        private void AskQuestion()
+        private void AskQuestion(string currentCategory)
         {
-            if (CurrentCategory() == "Pop")
+            if (currentCategory == "Pop")
             {
                 Console.WriteLine(popQuestions.First());
                 popQuestions.RemoveFirst();
             }
-            if (CurrentCategory() == "Science")
+            if (currentCategory == "Science")
             {
                 Console.WriteLine(scienceQuestions.First());
                 scienceQuestions.RemoveFirst();
             }
-            if (CurrentCategory() == "Sports")
+            if (currentCategory == "Sports")
             {
                 Console.WriteLine(sportsQuestions.First());
                 sportsQuestions.RemoveFirst();
             }
-            if (CurrentCategory() == "Rock")
+            if (currentCategory == "Rock")
             {
                 Console.WriteLine(rockQuestions.First());
                 rockQuestions.RemoveFirst();
