@@ -18,16 +18,14 @@ namespace UglyTrivia
 
         Questions _questions = new Questions();
 
-        public bool Add(string playerName)
+        public void Add(string playerName)
         {
             players.Add(playerName);
             places[HowManyPlayers()] = 0;
             purses[HowManyPlayers()] = 0;
             inPenaltyBox[HowManyPlayers()] = false;
-
             Console.WriteLine($"{playerName} was added");
-            Console.WriteLine("They are player number " + players.Count);
-            return true;
+            Console.WriteLine("They are player number " + HowManyPlayers());
         }
 
         int HowManyPlayers() => players.Count;
