@@ -13,26 +13,10 @@ namespace UglyTrivia
 
         bool[] inPenaltyBox = new bool[6];
 
-        LinkedList<string> popQuestions = new LinkedList<string>();
-        LinkedList<string> scienceQuestions = new LinkedList<string>();
-        LinkedList<string> sportsQuestions = new LinkedList<string>();
-        LinkedList<string> rockQuestions = new LinkedList<string>();
-
         int currentPlayer;
         bool isGettingOutOfPenaltyBox;
 
-        public Game()
-        {
-            for (var i = 0; i < 50; i++)
-            {
-                popQuestions.AddLast("Pop Question " + i);
-                scienceQuestions.AddLast("Science Question " + i);
-                sportsQuestions.AddLast(CreateQuestion(i, "Sports"));
-                rockQuestions.AddLast(CreateQuestion(i, "Rock"));
-            }
-        }
-
-        string CreateQuestion(int index, string theme) => $"{theme} Question {index}";
+        Questions _questions = new Questions();
 
         public bool Add(string playerName)
         {
@@ -67,7 +51,7 @@ namespace UglyTrivia
                             + "'s new location is "
                             + places[currentPlayer]);
                     Console.WriteLine("The category is " + CurrentCategory());
-                    AskQuestion(CurrentCategory());
+                    _questions.AskQuestion(CurrentCategory());
                 }
                 else
                 {
@@ -84,35 +68,8 @@ namespace UglyTrivia
 
                 Console.WriteLine($"{players[currentPlayer]}'s new location is {places[currentPlayer]}");
                 Console.WriteLine("The category is " + CurrentCategory());
-                AskQuestion(CurrentCategory());
+                _questions.AskQuestion(CurrentCategory());
             }
-
-        }
-
-        void AskQuestion(string currentCategory)
-        {
-            if (currentCategory == "Pop")
-            {
-                AskQuestionAndRemove(popQuestions);
-            }
-            if (currentCategory == "Science")
-            {
-                AskQuestionAndRemove(scienceQuestions);
-            }
-            if (currentCategory == "Sports")
-            {
-                AskQuestionAndRemove(sportsQuestions);
-            }
-            if (currentCategory == "Rock")
-            {
-                AskQuestionAndRemove(rockQuestions);
-            }
-        }
-
-        void AskQuestionAndRemove(LinkedList<string> questionsList)
-        {
-            Console.WriteLine(questionsList.First());
-            questionsList.RemoveFirst();
         }
 
         string CurrentCategory()
@@ -128,7 +85,7 @@ namespace UglyTrivia
         public bool WasCorrectlyAnswered()
         {
             bool winner;
-            
+
             if (inPenaltyBox[currentPlayer])
             {
                 if (isGettingOutOfPenaltyBox)
