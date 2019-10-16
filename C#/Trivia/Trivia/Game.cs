@@ -25,7 +25,7 @@ namespace UglyTrivia
             purses[HowManyPlayers()] = 0;
             inPenaltyBox[HowManyPlayers()] = false;
             Console.WriteLine($"{playerName} was added");
-            Console.WriteLine("They are player number " + HowManyPlayers());
+            Console.WriteLine($"They are player number {HowManyPlayers()}");
         }
 
         int HowManyPlayers() => players.Count;
