@@ -89,9 +89,7 @@ namespace UglyTrivia
                 places[currentPlayer] = places[currentPlayer] + roll;
                 if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 
-                Console.WriteLine(players[currentPlayer]
-                        + "'s new location is "
-                        + places[currentPlayer]);
+                Console.WriteLine($"{players[currentPlayer]}'s new location is {places[currentPlayer]}");
                 Console.WriteLine("The category is " + CurrentCategory());
                 AskQuestion(CurrentCategory());
             }
